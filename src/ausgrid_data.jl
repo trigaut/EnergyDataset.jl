@@ -16,12 +16,12 @@ end
 
 function load_customer_data(df, customer::Int)
 	
-	df_customer = df[(df.Customer .== customer),:]
+	dfc = df[(df.Customer .== customer),:]
 
 	consumption = convert(Matrix, dfc[(dfc.Consumption_Category .== "GC"), 6:end-1])'
 	production = convert(Matrix, dfc[(dfc.Consumption_Category .== "GG"), 6:end-1])'
 
-	M, D = size(conso)
+	M, D = size(consumption)
 
 	scenarios = zeros(Float64, M, D, 2)
 	for m in 1:M
