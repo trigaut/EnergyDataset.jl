@@ -9,7 +9,7 @@ function load_ausgrid_train_data()
 end
 
 function load_ausgrid_test_data()
-	CSV.read(ausgrid_train_dir*"/2012-2013 Solar home electricity data v2.csv", 
+	CSV.read(ausgrid_test_dir*"/2012-2013 Solar home electricity data v2.csv", 
 			datarow=3, header=2, dateformat="dd/mm/yyyy", normalizenames=true, 
 			missingstring="-999")
 end
